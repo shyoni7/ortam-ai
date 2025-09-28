@@ -1,27 +1,25 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import Hero from '@/components/Hero'
-import Services from '@/components/Services'
-import Testimonials from '@/components/Testimonials'
-import Features from '@/components/Features'
+// import Header from '@/components/Header'
+// import Footer from '@/components/Footer'
+// import Hero from '@/components/Hero'
+// import Services from '@/components/Services'
+// import Testimonials from '@/components/Testimonials'
+// import Features from '@/components/Features'
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-      
-      <main>
+{/* <Header /> */}      
+      <main>}
+        
         {/* Hero Section */}
-        <Hero />
-        
+{/* <Hero /> */}        
         {/* Features Section */}
-        <Features />
-        
+{/* <Features /> */}        
         {/* Services Section */}
-        <Services />
-        
+{/* <Services /> */}
+          
         {/* Testimonials Section */}
-        <Testimonials />
+{/* <Testimonials /> */}
         
         {/* Additional Content Section */}
         <section className="py-16 bg-gray-50">
