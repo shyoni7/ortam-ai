@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./tokens.css";
+
+html {
+  direction: rtl;
+  font-family: 'Assistant', 'Inter', sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
