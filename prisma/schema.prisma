@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  passwordHash String?
+  role         Role     @relation(fields: [roleId], references: [id])
+  roleId       String
+  createdAt    DateTime @default(now())
+}
+
+model Role {
+  id    String @id @default(uuid())
+  name  String
+  users User[]
+}
+
+model Page {
+  id        String    @id @default(uuid())
+  slug      String    @unique
+  title     String
+  locale    String
+  status    String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  sections  Section[]
+}
+
+model Section {
+  id         String   @id @default(uuid())
+  page       Page     @relation(fields: [pageId], references: [id])
+  pageId     String
+  type       String
+  order      Int
+  jsonPayload Json
+}
+
+model Media {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  url       String
+  width     Int
+  height    Int
+  mime      String
+  alt       String?
+  title     String?
+  createdAt DateTime @default(now())
+  uploadedBy String?
+}
